@@ -5,7 +5,7 @@
 1. Скачать скрипт:  
 curl -fsSL -o install.sh https://raw.githubusercontent.com/Domorosheniy/3xui-installer/refs/heads/main/3xui_installer.sh
 
-2. (Необязательно) Открыть и посмотреть содержимое:  
+2. (Необязательно) Открыть и посмотреть содержимое. Можно изменить порт, логин, пароль:  
 nano install.sh
 
 3. Сделать исполняемым и запустить:  
