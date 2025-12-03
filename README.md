@@ -23,7 +23,7 @@ nano install.sh
   chmod +x install.sh  
   sudo ./install.sh 
 
-## 🔥 Установка одной командой (для смелых. или ленивых):
+## 🔥 Установка одной командой (для смелых и ленивых):
 curl -fSL --retry 5 --retry-delay 2 --connect-timeout 10 -o 3xui_installer.sh https://raw.githubusercontent.com/Domorosheniy/3xui-installer/refs/heads/main/3xui_installer.sh && chmod +x 3xui_installer.sh && sudo ./3xui_installer.sh
 
 - ✅ SSH: порт 40024, только ключи, без root  
