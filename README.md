@@ -13,7 +13,7 @@ nano install.sh
   sudo ./install.sh 
 
 ## 🔥 Установка за 1 команду:
-curl -fsSL https://raw.githubusercontent.com/ТВОЙ_ЛОГИН/ubuntu-3xui/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Domorosheniy/3xui-installer/refs/heads/main/3xui_installer.sh | bash
 
 - ✅ SSH: порт 40024, только ключи, без root  
 - 👤 Пользователь: user, Пароль: user  
