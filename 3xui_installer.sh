@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 # ========== НАСТРОЙКИ ==========
 USER_NAME="user"                    # добавляем юзера (измени имя)
@@ -108,19 +108,21 @@ x-ui status
 ufw status
 
 # 10. 📋 ИТОГО
-echo "[9/9] 🎉 УСТАНОВКА ЗАВЕРШЕНА!"
-echo ""
-echo "🔗 SSH: ssh -p $SSH_PORT $USER_NAME@IP_СЕРВЕРА"
-echo "🔑 Пароль '$USER_PASS' ТОЛЬКО для sudo/emergency!"
-echo "🌐 Адрес панели и данные для входа выше, PORT $PANEL_PORT"
-echo "⚠️ Inbound: 443,8443,2053 (НЕ $PANEL_PORT!)"
-echo "⚠️ Панель - Настройки - Сертификаты - вставить пути:"
-echo "⚠️ Публичный ключ: /etc/ssl/certs/3x-ui.pem"
-echo "⚠️ Приватный ключ: /etc/ssl/certs/3x-ui.key"
-echo "⏰ Время: $(timedatectl | head -1)"
-echo ""
-echo "🧪 Тесты:"
-echo "  x-ui status"
-echo "  x-ui log"
-echo "  ss -tulpn | grep :$SSH_PORT"
-echo "  ssh -p $SSH_PORT $USER_NAME@localhost  # тест ключа"
+cat <<EOF
+[9/9] 🎉 УСТАНОВКА ЗАВЕРШЕНА!
+
+🔗 SSH: ssh -p $SSH_PORT $USER_NAME@IP_СЕРВЕРА
+🔑 Пароль '$USER_PASS' ТОЛЬКО для sudo/emergency!
+🌐 Адрес панели и данные для входа выше, PORT $PANEL_PORT
+⚠️ Inbound: 443,8443,2053 (НЕ $PANEL_PORT!)
+⚠️ Панель — Настройки — Сертификаты — вставить пути:
+⚠️ Публичный ключ: /etc/ssl/certs/3x-ui.pem
+⚠️ Приватный ключ: /etc/ssl/certs/3x-ui.key
+⏰ Время: $(timedatectl | head -1)
+
+🧪 Тесты:
+  x-ui status
+  x-ui log
+  ss -tulpn | grep :$SSH_PORT
+  ssh -p $SSH_PORT $USER_NAME@localhost  # тест ключа
+EOF
